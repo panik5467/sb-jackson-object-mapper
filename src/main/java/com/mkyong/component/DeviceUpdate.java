@@ -1,4 +1,9 @@
-package com.mkyong.service;
+package com.mkyong.component;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -11,27 +16,18 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.jackson.Jacksonized;
+import java.util.Optional;
 
-/**
-@Builder
-@ToString
-@Getter
-@Setter
-@AllArgsConstructor //(access = AccessLevel.PRIVATE)
-@NoArgsConstructor //(access = AccessLevel.PRIVATE)
-**/
 
 @Jacksonized
 @Value
 @Builder
 @ToString
 @AllArgsConstructor(access = AccessLevel.PRIVATE) //Hides the constructor to force useage of the Builder.
+public class DeviceUpdate { //implements Serializable {
 
-public class Address {
-	
-	private String street;
-	private String city;
-	private int zipcode;
-
+		private String name;
+		private Properties properties;
+		private Long id;
 
 }

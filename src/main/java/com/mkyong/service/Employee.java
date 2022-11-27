@@ -3,7 +3,34 @@ package com.mkyong.service;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.NonNull;
+import lombok.Value;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.extern.jackson.Jacksonized;
 
+
+/**
+@Builder
+@ToString
+@Getter
+@Setter
+//@JsonIgnoreProperties(ignoreUnknown = true)
+@AllArgsConstructor //(access = AccessLevel.PRIVATE)
+@NoArgsConstructor //(access = AccessLevel.PRIVATE)
+
+**/
+@Jacksonized
+@Value
+@Builder
+@ToString
+@AllArgsConstructor(access = AccessLevel.PRIVATE) //Hides the constructor to force useage of the Builder.
 public class Employee {
 
 	private int id;
@@ -14,71 +41,6 @@ public class Employee {
 	private String role;
 	private List<String> cities;
 	private Map<String, String> properties;
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public boolean isPermanent() {
-		return permanent;
-	}
-	public void setPermanent(boolean permanent) {
-		this.permanent = permanent;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	public long[] getPhoneNumbers() {
-		return phoneNumbers;
-	}
-	public void setPhoneNumbers(long[] phoneNumbers) {
-		this.phoneNumbers = phoneNumbers;
-	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
-	@Override
-	public String toString(){
-		StringBuilder sb = new StringBuilder();
-		sb.append("***** Employee Object *****\n");
-		sb.append("ID="+getId()+"\n");
-		sb.append("Name="+getName()+"\n");
-		sb.append("Permanent="+isPermanent()+"\n");
-		sb.append("Role="+getRole()+"\n");
-		sb.append("Phone Numbers="+Arrays.toString(getPhoneNumbers())+"\n");
-		sb.append("Address="+getAddress()+"\n");
-		sb.append("Cities="+Arrays.toString(getCities().toArray())+"\n");
-		sb.append("Properties="+getProperties()+"\n");
-		
-		return sb.toString();
-	}
-	public List<String> getCities() {
-		return cities;
-	}
-	public void setCities(List<String> cities) {
-		this.cities = cities;
-	}
-	public Map<String, String> getProperties() {
-		return properties;
-	}
-	public void setProperties(Map<String, String> properties) {
-		this.properties = properties;
-	}
-	
+
 
 }

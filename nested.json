@@ -1,0 +1,15 @@
+{
+  "deviceUpdate" : {
+    "name" : "agent",
+    "properties" : {
+      "name" : "manifest",
+      "updateId" : {
+        "version" : "v1.0",
+        "manufacturer" : "ESPRESSIF",
+        "model" : "modelAZERTY"
+      }
+    },
+    "id" : 1234567
+  },
+  "name" : "service"
+}
